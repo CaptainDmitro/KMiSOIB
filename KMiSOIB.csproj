@@ -81,7 +81,6 @@
     <Compile Include="RsaWindow.xaml.cs">
       <DependentUpon>RsaWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utills.cs" />
     <Compile Include="Utills2.cs" />
     <Page Include="DesWindow.xaml">
       <SubType>Designer</SubType>
