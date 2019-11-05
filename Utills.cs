@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KMiSOIB
 {
-    static class Utills2
+    static class Utills
     {
         public static string Shift(string msg, int offset)
         {

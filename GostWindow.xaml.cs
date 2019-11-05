@@ -22,8 +22,8 @@ namespace KMiSOIB
         public GostWindow()
         {
             InitializeComponent();
-            MessageTB.CharacterCasing = CharacterCasing.Upper;
-            KeyTB.CharacterCasing = CharacterCasing.Upper;
+            //MessageTB.CharacterCasing = CharacterCasing.Upper;
+            //KeyTB.CharacterCasing = CharacterCasing.Upper;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -72,14 +72,14 @@ namespace KMiSOIB
             ShiftTB.Text = Utills.DivideIntoBlocks(gost.shifted, 4);
             R1TB.Text = Utills.DivideIntoBlocks(gost.r1, 4);*/
 
-            L0TB.Text = Utills2.BinaryFormat(gost.l0, 4);
-            R0TB.Text = Utills2.BinaryFormat(gost.r0, 4);
-            R0TB.Text = Utills2.BinaryFormat(gost.r0, 4);
-            X0TB.Text = Utills2.BinaryFormat(gost.x0, 4);
-            fR0X0TB.Text = Utills2.BinaryFormat(gost.fR0X0, 4);
-            SubstitutionTB.Text = Utills2.BinaryFormat(gost.filled, 4);
-            ShiftTB.Text = Utills2.BinaryFormat(gost.shifted, 4);
-            R1TB.Text = Utills2.BinaryFormat(gost.r1, 4);
+            L0TB.Text = Utills.BinaryFormat(gost.l0, 4);
+            R0TB.Text = Utills.BinaryFormat(gost.r0, 4);
+            R0TB.Text = Utills.BinaryFormat(gost.r0, 4);
+            X0TB.Text = Utills.BinaryFormat(gost.x0, 4);
+            fR0X0TB.Text = Utills.BinaryFormat(gost.fR0X0, 4);
+            SubstitutionTB.Text = Utills.BinaryFormat(gost.filled, 4);
+            ShiftTB.Text = Utills.BinaryFormat(gost.shifted, 4);
+            R1TB.Text = Utills.BinaryFormat(gost.r1, 4);
         }
     }
 }

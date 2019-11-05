@@ -7,26 +7,26 @@
         mc:Ignorable="d"
         Title="ГОСТ 28147-89" Height="254" Width="598">
     <Grid>
-        <TextBox x:Name="MessageTB" HorizontalAlignment="Left" Height="23" Margin="124,13,0,0" TextWrapping="Wrap" Text="КОЗИНА Г" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="MessageTB" HorizontalAlignment="Left" Height="23" Margin="124,13,0,0" TextWrapping="Wrap" Text="КОЗИНА Г" VerticalAlignment="Top" Width="120" MaxLength="8"/>
         <Button x:Name="Proceed_Button" Content="Вычислить" HorizontalAlignment="Left" Margin="93,81,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click"/>
-        <TextBox x:Name="KeyTB" HorizontalAlignment="Left" Height="23" Margin="124,41,0,0" TextWrapping="Wrap" Text="АЛИН" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="KeyTB" HorizontalAlignment="Left" Height="23" Margin="124,41,0,0" TextWrapping="Wrap" Text="АЛИН" VerticalAlignment="Top" Width="120" MaxLength="4"/>
         <Label Content="Исходные данные:" HorizontalAlignment="Left" Margin="6,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Ключ:" HorizontalAlignment="Left" Margin="77,36,0,0" VerticalAlignment="Top"/>
         <Label Content="L0:" HorizontalAlignment="Left" Margin="302,10,0,0" VerticalAlignment="Top"/>
         <Label Content="R0:" HorizontalAlignment="Left" Margin="302,37,0,0" VerticalAlignment="Top"/>
         <Label Content="X0:" HorizontalAlignment="Left" Margin="302,66,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="L0TB" HorizontalAlignment="Left" Height="23" Margin="328,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
-        <TextBox x:Name="R0TB" HorizontalAlignment="Left" Height="23" Margin="328,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
-        <TextBox x:Name="X0TB" HorizontalAlignment="Left" Height="23" Margin="328,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
+        <TextBox x:Name="L0TB" HorizontalAlignment="Left" Height="23" Margin="328,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" IsReadOnly="True"/>
+        <TextBox x:Name="R0TB" HorizontalAlignment="Left" Height="23" Margin="328,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" IsReadOnly="True"/>
+        <TextBox x:Name="X0TB" HorizontalAlignment="Left" Height="23" Margin="328,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" IsReadOnly="True"/>
         <Label Content="f(X0, R0):" HorizontalAlignment="Left" Margin="272,94,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="fR0X0TB" HorizontalAlignment="Left" Height="24" Margin="328,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
+        <TextBox x:Name="fR0X0TB" HorizontalAlignment="Left" Height="24" Margin="328,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" IsReadOnly="True"/>
         <Label Content="" HorizontalAlignment="Left" Margin="272,94,0,0" VerticalAlignment="Top"/>
         <Label Content="Подстановка:" HorizontalAlignment="Left" Margin="245,123,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="SubstitutionTB" HorizontalAlignment="Left" Height="24" Margin="328,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
+        <TextBox x:Name="SubstitutionTB" HorizontalAlignment="Left" Height="24" Margin="328,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" IsReadOnly="True"/>
         <Label Content="Сдвиг:" HorizontalAlignment="Left" Margin="282,152,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="ShiftTB" HorizontalAlignment="Left" Height="24" Margin="328,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
+        <TextBox x:Name="ShiftTB" HorizontalAlignment="Left" Height="24" Margin="328,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" IsReadOnly="True"/>
         <Label Content="R1:" HorizontalAlignment="Left" Margin="301,181,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="R1TB" HorizontalAlignment="Left" Height="24" Margin="328,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248"/>
+        <TextBox x:Name="R1TB" HorizontalAlignment="Left" Height="24" Margin="328,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" IsReadOnly="True"/>
 
     </Grid>
 </Window>

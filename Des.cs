@@ -63,35 +63,35 @@ namespace KMiSOIB
             r = sbstMsg.Substring(sbstMsg.Length / 2, sbstMsg.Length / 2);
             var extended = ExtendBlockSize(r);
             keyBinary = "100101011001010101001100100111100101100100111111";
-            var sum = Utills2.Modulo2(extended, keyBinary, 48);
+            var sum = Utills.Modulo2(extended, keyBinary, 48);
             var anotherSubs = AnotherOneSubstituteElements(sum, substituteVector2);
             var sumRL = anotherSubs + l;
             substSum = SubstituteElements(sumRL, substituteVector3);
 
-            Console.WriteLine($"    sbstMsg: {Utills2.BinaryFormat(sbstMsg, 4)}");
-            Console.WriteLine($"          l: {Utills2.BinaryFormat(l, 4)}");
-            Console.WriteLine($"          r: {Utills2.BinaryFormat(r, 4)}");
-            Console.WriteLine($"   extended: {Utills2.BinaryFormat(extended, 6)}");
-            Console.WriteLine($"        key: {Utills2.BinaryFormat(keyBinary, 6)}");
-            Console.WriteLine($"        sum: {Utills2.BinaryFormat(sum, 6)}");
-            Console.WriteLine($"anotherSubs: {Utills2.BinaryFormat(anotherSubs, 8)}");
-            Console.WriteLine($"      sumRL: {Utills2.BinaryFormat(sumRL, 8)}");
-            Console.WriteLine($"   substSum: {Utills2.BinaryFormat(substSum, 8)}");
+            Console.WriteLine($"    sbstMsg: {Utills.BinaryFormat(sbstMsg, 4)}");
+            Console.WriteLine($"          l: {Utills.BinaryFormat(l, 4)}");
+            Console.WriteLine($"          r: {Utills.BinaryFormat(r, 4)}");
+            Console.WriteLine($"   extended: {Utills.BinaryFormat(extended, 6)}");
+            Console.WriteLine($"        key: {Utills.BinaryFormat(keyBinary, 6)}");
+            Console.WriteLine($"        sum: {Utills.BinaryFormat(sum, 6)}");
+            Console.WriteLine($"anotherSubs: {Utills.BinaryFormat(anotherSubs, 8)}");
+            Console.WriteLine($"      sumRL: {Utills.BinaryFormat(sumRL, 8)}");
+            Console.WriteLine($"   substSum: {Utills.BinaryFormat(substSum, 8)}");
 
         }
 
         private void Init()
         {
-            msgBinary = Utills2.StickedBinaryMsg(message);
+            msgBinary = Utills.StickedBinaryMsg(message);
             sbstMsg = SubstituteElements(msgBinary, substituteVector1);
             //sbstMsg = "1001101010001011101001000100111101101011101101011111001101101011";
             l = sbstMsg.Substring(0, sbstMsg.Length / 2);
             r = sbstMsg.Substring(sbstMsg.Length / 2, sbstMsg.Length / 2);
             extendedBlockR = ExtendBlockSize(r);
-            keyBinary = Utills2.StickedBinaryMsg(key);
+            keyBinary = Utills.StickedBinaryMsg(key);
             //keyBinary = "100101011001010101001100100111100101100100111111";
             Console.WriteLine(extendedBlockR.Length + " " + keyBinary.Length);
-            sumKeyAndExtR = Utills2.Modulo2(extendedBlockR, keyBinary, 48);
+            sumKeyAndExtR = Utills.Modulo2(extendedBlockR, keyBinary, 48);
             anotherSubstitute = AnotherOneSubstituteElements(sumKeyAndExtR, substituteVector2);
             concatRAndL = anotherSubstitute + l;
             substSum = SubstituteElements(concatRAndL, substituteVector3);
@@ -99,7 +99,7 @@ namespace KMiSOIB
 
         private string ExtendBlockSize(string bitStr)
         {
-            string[] formattedBitStr = Utills2.BinaryFormat(bitStr, 4).Split(' ');
+            string[] formattedBitStr = Utills.BinaryFormat(bitStr, 4).Split(' ');
             StringBuilder extendedBitStr;
             StringBuilder result = new StringBuilder(48);
 
@@ -132,7 +132,7 @@ namespace KMiSOIB
 
         private string AnotherOneSubstituteElements(string str, int[,] substituteVector)
         {
-            string[] binaryString = Utills2.BinaryFormat(str, 6).Split(' ');
+            string[] binaryString = Utills.BinaryFormat(str, 6).Split(' ');
             StringBuilder result = new StringBuilder();
             int col, row;
 

@@ -44,34 +44,34 @@ namespace KMiSOIB
         private void Init()
         {
             var r0_str = message.Substring(message.Length / 2, message.Length / 2);
-            r0 = Utills2.StickedBinaryMsg(r0_str);
+            r0 = Utills.StickedBinaryMsg(r0_str);
 
             var x0_str = key;
-            x0 = Utills2.StickedBinaryMsg(x0_str);
+            x0 = Utills.StickedBinaryMsg(x0_str);
 
-            fR0X0 = Utills2.Modulo2Pow32(r0, x0);
+            fR0X0 = Utills.Modulo2Pow32(r0, x0);
 
             filled = SubstituteElements(fR0X0);
 
-            shifted = Utills2.Shift(filled, -11);
+            shifted = Utills.Shift(filled, -11);
 
             var l0_str = message.Substring(0, message.Length / 2);
-            l0 = Utills2.StickedBinaryMsg(l0_str);
+            l0 = Utills.StickedBinaryMsg(l0_str);
 
-            r1 = Utills2.Modulo2(l0, shifted);
+            r1 = Utills.Modulo2(l0, shifted);
         }
 
         private string SubstituteElements(string str)
         {
             StringBuilder substitutedStr = new StringBuilder();
-            string[] blocks = Utills2.BinaryFormat(str, 4).Split(' ');
+            string[] blocks = Utills.BinaryFormat(str, 4).Split(' ');
             int col = 0;
             int row;
 
             foreach (var b in blocks)
             {
                 row = Convert.ToInt32(b, 2);
-                substitutedStr.Append(Utills2.BinaryFormat(Convert.ToString(substituteTable[row, col], 2), 4));
+                substitutedStr.Append(Utills.BinaryFormat(Convert.ToString(substituteTable[row, col], 2), 4));
                 col++;
             }
 

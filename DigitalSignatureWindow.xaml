@@ -10,8 +10,8 @@
         <TextBox x:Name="HashTB" HorizontalAlignment="Left" Height="23" Margin="88,13,0,0" TextWrapping="Wrap" Text="233" VerticalAlignment="Top" Width="112"/>
         <TextBox x:Name="PrivateKeyTB" HorizontalAlignment="Left" Height="23" Margin="114,44,0,0" TextWrapping="Wrap" Text="25 247" VerticalAlignment="Top" Width="58"/>
         <TextBox x:Name="PublicKeyTB" HorizontalAlignment="Left" Height="23" Margin="114,75,0,0" TextWrapping="Wrap" Text="121 247" VerticalAlignment="Top" Width="58"/>
-        <TextBox x:Name="EncryptedTB" HorizontalAlignment="Left" Height="23" Margin="80,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="DecryptedTB" HorizontalAlignment="Left" Height="23" Margin="80,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="EncryptedTB" HorizontalAlignment="Left" Height="23" Margin="80,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
+        <TextBox x:Name="DecryptedTB" HorizontalAlignment="Left" Height="23" Margin="80,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsReadOnly="True"/>
         <Button x:Name="Proceed_Button" Content="Выполнить" HorizontalAlignment="Left" Margin="66,189,0,0" VerticalAlignment="Top" Width="75" Click="Proceed_Button_Click"/>
         <Label Content="Хеш-образ:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label Content="Закрытый ключ:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
