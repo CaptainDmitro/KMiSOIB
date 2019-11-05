@@ -61,7 +61,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Alphabet.cs" />
-    <Compile Include="BitNum.cs" />
+    <Compile Include="Alphabet2.cs" />
     <Compile Include="Des.cs" />
     <Compile Include="DesWindow.xaml.cs">
       <DependentUpon>DesWindow.xaml</DependentUpon>
@@ -82,6 +82,7 @@
       <DependentUpon>RsaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utills.cs" />
+    <Compile Include="Utills2.cs" />
     <Page Include="DesWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

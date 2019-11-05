@@ -31,9 +31,7 @@ namespace KMiSOIB
             e = (phi * k + 1) / d;
         }
 
-        //public string GetPublicKey() { return "(" + e + ", " + n + ")"; }
         public string GetPublicKey() { return e + " " + n ; }
-        //public string GetPrivateKey() { return "(" + d + ", " + n + ")"; }
         public string GetPrivateKey() { return d + " " + n; }
 
         public string Encrypt()
@@ -41,7 +39,6 @@ namespace KMiSOIB
             foreach(var ch in message)
             {
                 if (ch == ' ') continue;
-                //int charIndex = Utills.ConvertCharToDex(ch);
                 int charIndex = Alphabet.GetCharIndex33(ch);
                 var res = BigInteger.ModPow(charIndex, e, n);
                 encryptedMessage += res + " ";
@@ -55,7 +52,6 @@ namespace KMiSOIB
             foreach (var ch in encryptedMessage.Trim().Split(' '))
             {
                 var res = BigInteger.ModPow(int.Parse(ch), d, n);
-                //decryptedMessage += Utills.ConverToChar((int)res);
                 decryptedMessage += Alphabet.GetChar33((int)res);
             }
 
