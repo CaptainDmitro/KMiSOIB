@@ -5,17 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KMiSOIB"
         mc:Ignorable="d"
-        Title="Функция хеширования" Height="177" Width="233">
+        Title="Функция хеширования" Height="208.882" Width="233">
     <Grid>
         <TextBox x:Name="MessageTB" HorizontalAlignment="Left" Height="23" Margin="92,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="КОЗИНА"/>
-        <TextBox x:Name="qTB" HorizontalAlignment="Left" Height="23" Margin="124,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Text="19"/>
-        <TextBox x:Name="resTB" HorizontalAlignment="Left" Height="23" Margin="88,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" IsReadOnly="True"/>
-        <Button x:Name="Proceed_Button" Content="Рассчитать" HorizontalAlignment="Left" Margin="69,113,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <TextBox x:Name="qTB" HorizontalAlignment="Left" Height="23" Margin="124,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Text="19"/>
+        <TextBox x:Name="resTB" HorizontalAlignment="Left" Height="23" Margin="88,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" IsReadOnly="True"/>
+        <Button x:Name="Proceed_Button" Content="Рассчитать" HorizontalAlignment="Left" Margin="69,146,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Label Content="Сообщение:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="p = " HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="pTB" HorizontalAlignment="Left" Height="23" Margin="42,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Text="13"/>
-        <Label Content="q = " HorizontalAlignment="Left" Margin="92,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.094,0.885"/>
-        <Label Content="Хеш-образ:" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top"/>
+        <Label Content="p = " HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="pTB" HorizontalAlignment="Left" Height="23" Margin="42,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Text="13"/>
+        <Label Content="q = " HorizontalAlignment="Left" Margin="92,73,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.094,0.885"/>
+        <Label Content="Хеш-образ:" HorizontalAlignment="Left" Margin="10,106,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="H0TB" HorizontalAlignment="Left" Height="23" Margin="92,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="8"/>
+        <Label Content="H0:" HorizontalAlignment="Left" Margin="59,41,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

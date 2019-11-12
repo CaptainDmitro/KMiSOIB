@@ -8,7 +8,7 @@ namespace KMiSOIB
 {
     static class Alphabet2
     {
-        private static int spaceNum = 32;
+        private static int spaceNum = 16;
         public static int GetCharCode(char ch)
         {
             int chBase10;

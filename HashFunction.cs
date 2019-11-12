@@ -19,14 +19,14 @@ namespace KMiSOIB
 
         private int hash;
 
-        public HashFunction(string message, int p, int q)
+        public HashFunction(string message, int p, int q, int h0)
         {
             this.message = message;
             this.p = p;
             this.q = q;
+            this.h0 = h0;
 
             n = p * q;
-            h0 = 8;
         }
 
         private int f(int a, int b) 

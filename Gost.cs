@@ -11,6 +11,8 @@ namespace KMiSOIB
     {
         private string message;
         private string key;
+
+        //Подстановочная таблица
         private readonly int[,] substituteTable = new int[,]
         {
            // 0  1   2  3  4  5  6   7
@@ -61,6 +63,7 @@ namespace KMiSOIB
             r1 = Utills.Modulo2(l0, shifted);
         }
 
+        //Функция подстановки
         private string SubstituteElements(string str)
         {
             StringBuilder substitutedStr = new StringBuilder();

@@ -27,7 +27,7 @@ namespace KMiSOIB
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            HashFunction hashFunction = new HashFunction(MessageTB.Text, int.Parse(pTB.Text), int.Parse(qTB.Text));
+            HashFunction hashFunction = new HashFunction(MessageTB.Text, int.Parse(pTB.Text), int.Parse(qTB.Text), int.Parse(H0TB.Text));
             resTB.Text = hashFunction.Hash().ToString();
         }
     }

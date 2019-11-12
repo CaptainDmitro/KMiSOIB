@@ -21,6 +21,7 @@ namespace KMiSOIB
         public string concatRAndL;
         public string substSum;
 
+        //Начальная перестановка
         private readonly int[] substituteVector1 =
         {
             58, 50, 42, 34, 26, 18, 10, 2, 60, 52, 44, 36, 28, 20, 12, 4,
@@ -29,6 +30,7 @@ namespace KMiSOIB
             61, 53, 45, 37, 29, 21, 13, 5, 63, 55, 47, 39, 31, 23, 15, 7
         };
 
+        //Подстановочная таблица для r + key
         private readonly int[,] substituteVector2 =
         {
             { 14,  4, 13, 1,  2, 15, 11,  8,  3, 10,  6, 12,  5,  9, 0,  7 },
@@ -37,6 +39,7 @@ namespace KMiSOIB
             { 15, 12,  8, 2,  4,  9,  1,  7,  5, 11,  3, 14, 10,  0, 6, 13 }
         };
 
+        //Конечная перестановка
         private readonly int[] substituteVector3 =
         {
             40, 8, 48, 16, 56, 24, 64, 32, 39, 7, 47, 15, 55, 23, 63, 31,
@@ -55,7 +58,7 @@ namespace KMiSOIB
             Init();
         }
 
-        private void Init3()
+        private void InitTest()
         {
             
             sbstMsg = "1001101010001011101001000100111101101011101101011111001101101011";
@@ -88,15 +91,17 @@ namespace KMiSOIB
             l = sbstMsg.Substring(0, sbstMsg.Length / 2);
             r = sbstMsg.Substring(sbstMsg.Length / 2, sbstMsg.Length / 2);
             extendedBlockR = ExtendBlockSize(r);
-            keyBinary = Utills.StickedBinaryMsg(key);
+            keyBinary = dropBits(Utills.StickedBinaryMsg(key));
             //keyBinary = "100101011001010101001100100111100101100100111111";
-            Console.WriteLine(extendedBlockR.Length + " " + keyBinary.Length);
             sumKeyAndExtR = Utills.Modulo2(extendedBlockR, keyBinary, 48);
             anotherSubstitute = AnotherOneSubstituteElements(sumKeyAndExtR, substituteVector2);
-            concatRAndL = anotherSubstitute + l;
+            concatRAndL = string.Concat(anotherSubstitute + l);
             substSum = SubstituteElements(concatRAndL, substituteVector3);
+
+            Console.WriteLine(Utills.BinaryFormat(Utills.StickedBinaryMsg(key), 8));
         }
 
+        //Расширение 4-битных блоков r до 6 бит
         private string ExtendBlockSize(string bitStr)
         {
             string[] formattedBitStr = Utills.BinaryFormat(bitStr, 4).Split(' ');
@@ -117,6 +122,24 @@ namespace KMiSOIB
             return result.ToString();
         }
 
+        //Удаление из 56-битного исходного ключа 8, 16, 24, 32, 40, 48, 55, 56 биты; получаем 48-битный ключ
+        private string dropBits(string key)
+        {
+            string formattedKey = key.PadLeft(56, '0');
+            StringBuilder resKey = new StringBuilder(48);
+
+            for (int i = 0; i < key.Length; i++)
+            {
+                if ( !((i + 1) % 8 == 0 || i == 54) )
+                {
+                    resKey.Append(formattedKey[i]);
+                }
+            }
+
+            return resKey.ToString();
+        }
+
+        //Функция перестановки
         private string SubstituteElements(string str, int[] substituteVector)
         {
             char[] arr = new char[str.Length];
@@ -130,6 +153,7 @@ namespace KMiSOIB
             return string.Join("", arr);
         }
 
+        //Функция подстановки для r ^ key
         private string AnotherOneSubstituteElements(string str, int[,] substituteVector)
         {
             string[] binaryString = Utills.BinaryFormat(str, 6).Split(' ');
