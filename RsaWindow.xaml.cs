@@ -29,7 +29,7 @@ namespace KMiSOIB
         {
             ClearTextBox(nTB, phiTB, eTB, PublicKeyTB, PrivateKeyTB, EncryptedTB, DecryptTB);
 
-            RSA rsa = new RSA(MessageTB.Text, int.Parse(pTB.Text), int.Parse(qTB.Text), int.Parse(dTB.Text), int.Parse(kTB.Text));
+            RSA rsa = new RSA(MessageTB.Text, int.Parse(pTB.Text), int.Parse(qTB.Text), int.Parse(dTB.Text));
             nTB.Text = rsa.n.ToString();
             phiTB.Text = rsa.phi.ToString();
             eTB.Text = rsa.e.ToString();

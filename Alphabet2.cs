@@ -8,14 +8,14 @@ namespace KMiSOIB
 {
     static class Alphabet2
     {
-        private static int spaceNum = 16;
+        private static int spaceNum = 32;
         public static int GetCharCode(char ch)
         {
             int chBase10;
 
             if (ch >= 'а' && ch <= 'я') chBase10 = ch % 1072 + 224;
             else if (ch >= 'А' && ch <= 'Я') chBase10 = ch % 1040 + 192;
-            else if (ch == ' ') chBase10 = spaceNum; //Wrong fucking space number
+            else if (ch == ' ') chBase10 = spaceNum;
             else throw new Exception($"Неподдерживаемый символ {ch}");
 
             return chBase10;

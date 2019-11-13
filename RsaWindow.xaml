@@ -19,8 +19,6 @@
         <TextBox x:Name="dTB" HorizontalAlignment="Left" Height="23" Margin="318,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Text="25"/>
         <Label Content="e = " HorizontalAlignment="Left" Margin="160,47,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="eTB" HorizontalAlignment="Left" Height="23" Margin="189,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" IsReadOnly="True"/>
-        <Label Content="k = " HorizontalAlignment="Left" Margin="353,10,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="kTB" HorizontalAlignment="Left" Height="23" Margin="382,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Text="14"/>
         <Label Content="Открытый ключ:" HorizontalAlignment="Left" Margin="6,77,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="PublicKeyTB" HorizontalAlignment="Left" Height="23" Margin="109,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="69" IsReadOnly="True"/>
         <Label Content="Закрытый ключ:" HorizontalAlignment="Left" Margin="6,103,0,0" VerticalAlignment="Top"/>

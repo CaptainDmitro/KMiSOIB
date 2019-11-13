@@ -18,17 +18,18 @@ namespace KMiSOIB
         public int phi { get; }
         public int e { get; }
 
-        public RSA(string message, int p, int q, int d, int k)
+        public RSA(string message, int p, int q, int d)
         {
             this.message = message;
             this.p = p;
             this.q = q;
             this.d = d;
-            this.k = k;
 
             n = p * q;
             phi = (p - 1) * (q - 1);
-            e = (phi * k + 1) / d;
+            e = FindE();
+
+            FindE();
         }
 
         public string GetPublicKey() { return e + " " + n ; }
@@ -56,6 +57,17 @@ namespace KMiSOIB
             }
 
             return decryptedMessage;
+        }
+
+        private int FindE()
+        {
+            int e = 0;
+            while ((d * e - 1) % phi != 0)
+            {
+                e++;
+            }
+
+            return e;
         }
 
     }
