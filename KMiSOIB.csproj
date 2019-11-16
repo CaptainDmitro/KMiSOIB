@@ -61,7 +61,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Alphabet.cs" />
-    <Compile Include="Alphabet2.cs" />
     <Compile Include="Des.cs" />
     <Compile Include="DesWindow.xaml.cs">
       <DependentUpon>DesWindow.xaml</DependentUpon>

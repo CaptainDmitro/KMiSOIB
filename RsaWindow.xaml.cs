@@ -22,7 +22,6 @@ namespace KMiSOIB
         public RsaWindow()
         {
             InitializeComponent();
-            MessageTB.CharacterCasing = CharacterCasing.Upper;
         }
 
         private void RraTB_Click(object sender, RoutedEventArgs e)

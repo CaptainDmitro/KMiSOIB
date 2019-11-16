@@ -17,6 +17,7 @@ namespace KMiSOIB
         public int n { get; }
         public int phi { get; }
         public int e { get; }
+        private int maxCharCode;
 
         public RSA(string message, int p, int q, int d)
         {
@@ -24,6 +25,8 @@ namespace KMiSOIB
             this.p = p;
             this.q = q;
             this.d = d;
+
+            maxCharCode = 0;
 
             n = p * q;
             phi = (p - 1) * (q - 1);
@@ -39,8 +42,11 @@ namespace KMiSOIB
         {
             foreach(var ch in message)
             {
-                if (ch == ' ') continue;
-                int charIndex = Alphabet.GetCharIndex33(ch);
+                int charIndex = Alphabet.GetCharCode(ch);
+
+                maxCharCode = charIndex > maxCharCode ? charIndex : maxCharCode;
+                if (maxCharCode >= n) throw new Exception($"Индекс буквы {Alphabet.GetChar(maxCharCode)} = {maxCharCode} больше/равно n = {n}");
+
                 var res = BigInteger.ModPow(charIndex, e, n);
                 encryptedMessage += res + " ";
             }
@@ -53,7 +59,7 @@ namespace KMiSOIB
             foreach (var ch in encryptedMessage.Trim().Split(' '))
             {
                 var res = BigInteger.ModPow(int.Parse(ch), d, n);
-                decryptedMessage += Alphabet.GetChar33((int)res);
+                decryptedMessage += Alphabet.GetChar(((int)res + n) % n);
             }
 
             return decryptedMessage;

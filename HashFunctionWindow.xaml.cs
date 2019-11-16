@@ -22,7 +22,6 @@ namespace KMiSOIB
         public HashFunctionWindow()
         {
             InitializeComponent();
-            MessageTB.CharacterCasing = CharacterCasing.Upper;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

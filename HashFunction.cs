@@ -36,11 +36,11 @@ namespace KMiSOIB
 
         public int Hash()
         {
-            hash = f(h0, Alphabet.GetCharIndex33(message[0]));
+            hash = f(h0, Alphabet.GetCharCode(message[0]));
 
             foreach(var ch in message.Substring(1))
             {
-                hash = f(hash, Alphabet.GetCharIndex33(ch));
+                hash = f(hash, Alphabet.GetCharCode(ch));
             }
 
             return hash;

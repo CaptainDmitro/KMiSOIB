@@ -29,7 +29,7 @@ namespace KMiSOIB
             StringBuilder stickedBinaryMsg = new StringBuilder();
 
             foreach (char ch in msg)
-                stickedBinaryMsg.Append(ConverToBase2(Alphabet2.GetCharCode(ch)));
+                stickedBinaryMsg.Append(ConverToBase2(Alphabet.GetCharCode(ch)));
 
             return stickedBinaryMsg.ToString();
         }
